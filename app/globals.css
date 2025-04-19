@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake, cyberpunk;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
