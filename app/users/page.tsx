@@ -33,6 +33,9 @@ const UsersPage = async () => {
           </li>
         ))}
       </ul>
+      <main className="bg-green-500 text-white p-10">
+        <h1 className="text-4xl font-bold">Tailwind should make this green!</h1>
+      </main>
     </>
   );
 };
