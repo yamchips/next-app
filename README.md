@@ -25,3 +25,9 @@ In the video, the parameter is used synchrounously, which triggers an Error in b
 Server Error: Route "/users/[id]" used `params.id`. `params` should be awaited before using its properties.
 
 To solve this problem, async and await are used, which is recommended in [Next.js website](https://nextjs.org/docs/messages/sync-dynamic-apis) since the warning occurred on a Server component.
+
+## Catch All Segments
+
+[[]] means the parameters are optional, ... means it can accept varying number of parameters.
+
+Renaming [...slug] causes an error, so deleting and recreating is a better way.
