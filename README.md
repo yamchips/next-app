@@ -11,3 +11,17 @@ This is the first next app created by following Mosh's YouTube [video ](https://
 7. Styling using CSS modules
 8. Styling using Tailwind CSS
 9. Styling using DaisyUI
+
+## Tailwind Installation
+
+The installation method in the video is outdated. Follow the instructions in [Tailwind website](https://tailwindcss.com/docs/installation/framework-guides/nextjs) instead.
+
+## Dynamic Routing
+
+A dynamic route is a route with a parameter.
+
+In the video, the parameter is used synchrounously, which triggers an Error in browser:
+
+Server Error: Route "/users/[id]" used `params.id`. `params` should be awaited before using its properties.
+
+To solve this problem, async and await are used, which is recommended in [Next.js website](https://nextjs.org/docs/messages/sync-dynamic-apis) since the warning occurred on a Server component.
