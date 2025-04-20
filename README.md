@@ -16,6 +16,10 @@ This is the first next app created by following Mosh's YouTube [video ](https://
 
 The installation method in the video is outdated. Follow the instructions in [Tailwind website](https://tailwindcss.com/docs/installation/framework-guides/nextjs) instead.
 
+## DaisyUI
+
+New theme should be added in globals.css instead of tailwind.config.ts.
+
 ## Dynamic Routing
 
 A dynamic route is a route with a parameter.
