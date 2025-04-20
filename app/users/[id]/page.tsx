@@ -6,8 +6,8 @@ interface Props {
 
 // Dynamic rendering: only works in page.tsx
 
-const UserDetailPage = ({ params }: Props) => {
-  const { id } = params;
+const UserDetailPage = async ({ params }: Props) => {
+  const { id } = await params;
   return <div>UserDetailPage{id}</div>;
 };
 
