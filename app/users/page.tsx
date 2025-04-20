@@ -1,11 +1,16 @@
 import React from "react";
 import UserTable from "./UserTable";
 
-const UsersPage = async () => {
+interface Props {
+  searchParams: { sortOrder: string };
+}
+
+const UsersPage = async ({ searchParams }: Props) => {
+  const { sortOrder } = await searchParams;
   return (
     <>
       <h1>Users</h1>
-      <UserTable />
+      <UserTable sortOrder={sortOrder} />
       <main className="bg-green-500 text-white p-10">
         <h1 className="text-4xl font-bold">Tailwind should make this green!</h1>
       </main>
