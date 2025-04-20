@@ -28,6 +28,12 @@ To solve this problem, async and await are used, which is recommended in [Next.j
 
 ## Catch All Segments
 
+Create products/[[...slug]] path and page.tsx file.
+
 [[]] means the parameters are optional, ... means it can accept varying number of parameters.
 
 Renaming [...slug] causes an error, so deleting and recreating is a better way.
+
+## Accessing Query String Parameters
+
+Modify UserTable.tsx, /users/page.tsx.
