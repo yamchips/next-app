@@ -9,7 +9,6 @@ export default function Home() {
       <h1>Hello world</h1>
       <Link href="/users">Users</Link>
       <ProductCard />
-      <Navigation />
     </main>
   );
 }
