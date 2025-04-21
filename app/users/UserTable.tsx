@@ -19,7 +19,8 @@ interface Props {
 
 const UserTable = async ({ sortOrder }: Props) => {
   const res = await fetch(
-    "https://jsonplaceholder.typicode.com/users"
+    "https://jsonplaceholder.typicode.com/users",
+    { cache: "no-store" }
     // default setting is cache: 'force-cache'
     // { cache: "no-store" }, // don't store data in cache
     // { cache: "no-cache" }, // use cache, but check data validity before using it
