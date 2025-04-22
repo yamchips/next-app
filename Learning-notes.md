@@ -156,6 +156,25 @@ As we navigate in our app, Next.js stores the payload of our pages in a cache on
 
 ## Programmatic navigation
 
-Take user to a new page as a result of clicking a button or submitting a form. Here we turn /users/new/page.tsx into a client componet because we want to make a form on this page, and we cannot handle browser events in server component.
+Take user to a new page as a result of clicking a button or submitting a form. Here we turn /users/new/page.tsx into a client componet because we want to make a form on this page, and we cannot handle browser events in a server component.
 
 When importing router, import it from next/navigation instead of next/router. The latter is the old version (page router).
+
+## Showing loading UIs
+
+Add Suspense element around the target element, edit fallback attribute to define what users see when loading.
+
+If we want to set loading UIs between different pages, we can:
+
+1. in root layout.tsx, wrap children with Suspense
+2. create loading.tsx under app folder
+
+Loading file in child folder overrides loading file in parent folder.
+
+| Navigation Target              | Which loading.tsx?               |
+| ------------------------------ | -------------------------------- |
+| /                              | app/loading.tsx                  |
+| /users                         | app/users/loading.tsx            |
+| /users/abc                     | app/users/loading.tsx            |
+| /admin                         | app/admin/loading.tsx            |
+| no matching nested loading.tsx | Inherits from parent loading.tsx |
