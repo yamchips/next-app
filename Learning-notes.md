@@ -151,3 +151,11 @@ Link element in Next.js 13+:
 only downloads the content of the target page, not the navigation bar or global css that applies to every page
 
 pre-fetches links that are in the viewport
+
+As we navigate in our app, Next.js stores the payload of our pages in a cache on the client. This cache only exists in one session and clears when we do a full page reload.
+
+## Programmatic navigation
+
+Take user to a new page as a result of clicking a button or submitting a form. Here we turn /users/new/page.tsx into a client componet because we want to make a form on this page, and we cannot handle browser events in server component.
+
+When importing router, import it from next/navigation instead of next/router. The latter is the old version (page router).
