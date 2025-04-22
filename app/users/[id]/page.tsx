@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  params: { id: number };
+  params: Promise<{ id: number }>;
 }
 
 // Dynamic rendering: only works in page.tsx

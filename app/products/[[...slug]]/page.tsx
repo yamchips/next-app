@@ -1,8 +1,8 @@
 import React from "react";
 
 interface Props {
-  params: { slug: string[] };
-  searchParams: { sortOrder: string };
+  params: Promise<{ slug: string[] }>;
+  searchParams: Promise<{ sortOrder: string }>;
 }
 
 // [[]] means the parameters are optional, ... means it can accept varying number of parameters

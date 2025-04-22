@@ -30,7 +30,11 @@ In the video, the parameter is used synchrounously, which triggers an Error in b
 
 Server Error: Route "/users/[id]" used `params.id`. `params` should be awaited before using its properties.
 
-To solve this problem, async and await are used, which is recommended in [Next.js website](https://nextjs.org/docs/messages/sync-dynamic-apis) since the warning occurred on a Server component.
+To solve this problem, async and await are used, which is recommended in [Next.js website](https://nextjs.org/docs/messages/sync-dynamic-apis#possible-ways-to-fix-it) since the warning occurred on a Server component.
+
+After adding async and await, a hint shows on await keyword saying "await has no effect on this type of expression".
+
+To solve this problem, follow [Next.js website's](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#typescript) instruction to add a Promise type in the Props.
 
 ## Catch All Segments
 
