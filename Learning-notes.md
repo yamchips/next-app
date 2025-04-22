@@ -176,5 +176,10 @@ Loading file in child folder overrides loading file in parent folder.
 | /                              | app/loading.tsx                  |
 | /users                         | app/users/loading.tsx            |
 | /users/abc                     | app/users/loading.tsx            |
-| /admin                         | app/admin/loading.tsx            |
 | no matching nested loading.tsx | Inherits from parent loading.tsx |
+
+## Handling not found
+
+If a not-found.tsx is put under app/ folder, it is responsible for handling localhost:3000/unknown.
+
+If it is put under a subfolder, such as app/users, we need a [] or [[...slug]] subfolder and a page.tsx inside that folder to call notFound function. It is for handling localhost:3000/users/39.
