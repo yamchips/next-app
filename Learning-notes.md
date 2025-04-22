@@ -183,3 +183,13 @@ Loading file in child folder overrides loading file in parent folder.
 If a not-found.tsx is put under app/ folder, it is responsible for handling localhost:3000/unknown.
 
 If it is put under a subfolder, such as app/users, we need a [] or [[...slug]] subfolder and a page.tsx inside that folder to call notFound function. It is for handling localhost:3000/users/39.
+
+## Handling errors
+
+Creating an error.tsx in app/ folder can catch all errors. We can also create an error.tsx in a subfolder to handle all the errors happen in any of the routes under this subfolder.
+
+The errors happen in layout.tsx cannot be detected by error.tsx. A global-error.tsx needs to be created under app folder.
+
+To log error in real world, a tool called [Sentry](https://sentry.io/welcome/) is recommended.
+
+We can pass a reset function to this error.tsx file to retry loading current page. If so, we need to set the component client side because we need to deal with onClick event.
