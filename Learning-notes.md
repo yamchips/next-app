@@ -143,3 +143,11 @@ While in app/admin/layout.tsx, children means: app/admin/pages.tsx. And when vis
 1. app/layout.tsx (root)
 2. app/admin/layout.tsx (nested layout)
 3. app/admin/page.tsx (nested page → becomes children of admin layout)
+
+## Navigation
+
+Link element in Next.js 13+:
+
+only downloads the content of the target page, not the navigation bar or global css that applies to every page
+
+pre-fetches links that are in the viewport
