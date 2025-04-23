@@ -209,3 +209,7 @@ If the parameter request: NextRequest is deleted, Next.js caches the result of t
 ### Get a single object
 
 Create a subfolder api/users/[id] and a route.tsx. Use static data for now.
+
+### Create an object
+
+In api/users/route.tsx, add a new POST function. Use Postman to test creating an object.
