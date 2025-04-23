@@ -205,3 +205,7 @@ We can pass a reset function to this error.tsx file to retry loading current pag
 Create a subfolder api/users and a route.tsx. Use static data for now.
 
 If the parameter request: NextRequest is deleted, Next.js caches the result of this response. So, even it's not used, we should keep it.
+
+### Get a single object
+
+Create a subfolder api/users/[id] and a route.tsx. Use static data for now.
