@@ -219,3 +219,7 @@ In app/users/route.tsx, add a new POST function. Use Postman to test creating an
 In app/users/[id]/route.tsx, add a new function. We can use PUT or PATCH. PUT replaces the entire object and PATCH only updates one or more properties.
 
 First we check the validity of the request, then we check the validity of the id. If no error, we fetch and update the user object.
+
+### Delete an object
+
+In app/users/[id]/route.tsx, add a DELETE function.
