@@ -223,3 +223,37 @@ First we check the validity of the request, then we check the validity of the id
 ### Delete an object
 
 In app/users/[id]/route.tsx, add a DELETE function.
+
+### Validate requests with Zod
+
+Introduce a validation library called [Zod](https://zod.dev), which used in React course too.
+
+Create a schema.ts and define the structure of request.
+
+schema.safeParse won't throw an error, only return an object, schema.parse will throw an error.
+
+### HTTP status code
+
+| Status | Name                  | Meaning / When to Use                                                                                                    |
+| ------ | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 200    | OK                    | ✅ Successful GET, PUT, or DELETE request. The request was processed correctly.                                          |
+| 201    | Created               | ✅ Resource was successfully created (used after POST).                                                                  |
+| 204    | No Content            | ✅ Request was successful but no content to return (commonly used after DELETE).                                         |
+| 400    | Bad Request           | ❌ Client sent invalid data (e.g. missing required fields, wrong data type).                                             |
+| 401    | Unauthorized          | ❌ Authentication required — the user is not logged in.                                                                  |
+| 403    | Forbidden             | ❌ User is logged in but does not have permission to perform the action.                                                 |
+| 404    | Not Found             | ❌ Requested resource doesn’t exist (e.g. user with ID doesn't exist).                                                   |
+| 409    | Conflict              | ❌ There’s a conflict — e.g. trying to create a user with an email that already exists.                                  |
+| 422    | Unprocessable Entity  | ❌ Data is semantically incorrect (e.g. valid JSON structure, but invalid values). Often used in form validation errors. |
+| 429    | Too Many Requests     | ❌ Rate limit exceeded — you're sending too many requests in a short time.                                               |
+| 500    | Internal Server Error | ❌ Something went wrong on the server side — not the client's fault.                                                     |
+| 503    | Service Unavailable   | ❌ Server is down or temporarily unable to handle the request (e.g. under maintenance).                                  |
+
+Common CRUD usage example
+
+| Action | Method | Response Code            | Notes                        |
+| ------ | ------ | ------------------------ | ---------------------------- |
+| Create | POST   | 201 Created              | New resource added           |
+| Read   | GET    | 200 OK                   | Data retrieved successfully  |
+| Update | PUT    | 200 OK or 204 No Content | Resource updated             |
+| Delete | DELETE | 204 No Content           | Resource deleted, no content |

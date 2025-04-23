@@ -9,9 +9,9 @@ export async function GET(request: NextRequest, { params }: Props) {
   const { id } = await params;
   const newId = parseInt(id);
   if (isNaN(newId) || newId > 10) {
-    return NextResponse.json({ error: "User not found" }, { status: 404 });
+    return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
-  return NextResponse.json({ id: 1, name: "mosh" });
+  return NextResponse.json({ id: 1, name: "milk", price: 2.5 });
 }
 
 export async function PUT(request: NextRequest, { params }: Props) {
@@ -23,20 +23,17 @@ export async function PUT(request: NextRequest, { params }: Props) {
   if (!validation.success) {
     return NextResponse.json(validation.error.errors, { status: 400 });
   }
-  // if the user with given id doesn't exist
   if (isNaN(newId) || newId > 10) {
-    return NextResponse.json({ error: "User not found" }, { status: 404 });
+    return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
-  // fetch and update the user
-  return NextResponse.json({ id: 1, name: body.name });
+  return NextResponse.json({ id: 1, name: body.name, price: body.price });
 }
 
 export async function DELETE(request: NextRequest, { params }: Props) {
   const { id } = await params;
   const newId = parseInt(id);
   if (isNaN(newId) || newId > 10) {
-    return NextResponse.json({ error: "User not found" }, { status: 404 });
+    return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
-  // delete the user, not implement here
   return NextResponse.json({});
 }
