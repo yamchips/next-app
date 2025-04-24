@@ -267,3 +267,11 @@ Common CRUD usage example
 | MySQL Community Server | The actual database (your data lives here).                                                                      |
 | DataGrip               | A UI/database client — like a fancy version of MySQL Workbench, can connect to many kinds of databases.          |
 | Prisma                 | An ORM (Object Relational Mapper) — helps you interact with the database using TypeScript/JS instead of raw SQL. |
+
+### Create migration
+
+Command: npx prisma migrate dev
+
+Every time we update the table or database, we run above command to refresh.
+
+### Create a Prisma client

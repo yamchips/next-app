@@ -151,11 +151,12 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "mysql://root:090624JC@localhost:3306/nextapp"
+        "value": null
       }
     }
   },
