@@ -288,6 +288,8 @@ Use DataGrip to connect, view and change table in the database.
 
 In prisma folder, create a client.ts file. To avoid creating multiple clients in develop mode, refer to [the best practice](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/nextjs-help#best-practices-for-using-prisma-client-in-development).
 
+The PrismaClient is automatically imported from "@/app/generated/prisma", the import in the video and official doc are outdated.
+
 ### Get data
 
 Go to users/route.tsx file, change the static data to the data in database. Use findMany function to get all users.
@@ -297,3 +299,7 @@ Go to users/[id]/route.tsx file, use findUnique to get user with given id.
 ### Create data
 
 Go to users/route.tsx file, first we check whether the input email exists, if not, we create a new user object and return it.
+
+### Update data
+
+Go to users/[id]/route.tsx file, first we fetch the user with given id. If it exists, we update the email and name. I think here the real world case is more complex because we don't know which field(s) we have and we need to check and update given fields.
