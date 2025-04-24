@@ -307,3 +307,19 @@ Go to users/[id]/route.tsx file, first we fetch the user with given id. If it ex
 ### Delete data
 
 Similar to update. Here Mosh returns an empty object, while chatGPT recommends return the deleted user.
+
+## Upload files
+
+### Choose cloud platforms
+
+Amazon S3, Google Cloud Platform, Microsoft Azure, Cloudinary. Here, Cloudinary is chosen because it integrates with Next.js and React better.
+
+### Set up cloudinary
+
+Command: npm install next-cloudinary. Then add my cloud name to .env file.
+
+### Upload files
+
+Use unsigned upload [widget](https://next.cloudinary.dev/clduploadwidget/basic-usage#unsigned) to create an upload button.
+
+Create an upload folder and page.tsx.
