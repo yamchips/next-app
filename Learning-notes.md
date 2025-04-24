@@ -293,3 +293,7 @@ In prisma folder, create a client.ts file. To avoid creating multiple clients in
 Go to users/route.tsx file, change the static data to the data in database. Use findMany function to get all users.
 
 Go to users/[id]/route.tsx file, use findUnique to get user with given id.
+
+### Create data
+
+Go to users/route.tsx file, first we check whether the input email exists, if not, we create a new user object and return it.
