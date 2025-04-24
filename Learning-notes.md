@@ -257,3 +257,13 @@ Common CRUD usage example
 | Read   | GET    | 200 OK                   | Data retrieved successfully  |
 | Update | PUT    | 200 OK or 204 No Content | Resource updated             |
 | Delete | DELETE | 204 No Content           | Resource deleted, no content |
+
+## Database integration
+
+### Installation
+
+| Tool                   | Purpose                                                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| MySQL Community Server | The actual database (your data lives here).                                                                      |
+| DataGrip               | A UI/database client — like a fancy version of MySQL Workbench, can connect to many kinds of databases.          |
+| Prisma                 | An ORM (Object Relational Mapper) — helps you interact with the database using TypeScript/JS instead of raw SQL. |
