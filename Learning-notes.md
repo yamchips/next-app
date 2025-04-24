@@ -36,7 +36,7 @@ Server Error: Route "/users/[id]" used `params.id`. `params` should be awaited b
 
 To solve this problem, async and await are used, which is recommended in [Next.js website](https://nextjs.org/docs/messages/sync-dynamic-apis#possible-ways-to-fix-it) since the warning occurred on a Server component.
 
-After adding async and await, a hint shows on await keyword saying "await has no effect on this type of expression".
+After adding async and await, a hint shows on await keyword saying "await has no effect on this type of expression". This doesn't affect dev mode but causes an error in production.
 
 To solve this problem, follow [Next.js website's](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#typescript) instruction to add a Promise type in the Props.
 
@@ -303,3 +303,7 @@ Go to users/route.tsx file, first we check whether the input email exists, if no
 ### Update data
 
 Go to users/[id]/route.tsx file, first we fetch the user with given id. If it exists, we update the email and name. I think here the real world case is more complex because we don't know which field(s) we have and we need to check and update given fields.
+
+### Delete data
+
+Similar to update. Here Mosh returns an empty object, while chatGPT recommends return the deleted user.

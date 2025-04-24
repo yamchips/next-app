@@ -57,9 +57,17 @@ export async function PUT(request: NextRequest, { params }: Props) {
 export async function DELETE(request: NextRequest, { params }: Props) {
   const { id } = await params;
   const newId = parseInt(id);
-  if (isNaN(newId) || newId > 10) {
+  if (isNaN(newId)) {
+    return NextResponse.json({ error: "Invalid endpoint" }, { status: 400 });
+  }
+  const user = await prisma.user.findUnique({
+    where: { id: newId },
+  });
+  if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
-  // delete the user, not implement here
-  return NextResponse.json({});
+  const deletedUser = await prisma.user.delete({
+    where: { id: user.id },
+  });
+  return NextResponse.json(deletedUser);
 }
