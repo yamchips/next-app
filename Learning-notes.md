@@ -260,7 +260,7 @@ Common CRUD usage example
 
 ## Database integration
 
-### Installation
+### Set up Prisma
 
 | Tool                   | Purpose                                                                                                          |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -268,10 +268,28 @@ Common CRUD usage example
 | DataGrip               | A UI/database client — like a fancy version of MySQL Workbench, can connect to many kinds of databases.          |
 | Prisma                 | An ORM (Object Relational Mapper) — helps you interact with the database using TypeScript/JS instead of raw SQL. |
 
+### Define models
+
+Define a User model in schema.prisma file. Refer to [Prisma model](https://www.prisma.io/docs/orm/prisma-schema/data-model/models).
+
+Run "npx prisma format" to format this file.
+
 ### Create migration
+
+Every time we update the table or database, we run above command to keep database schema in sync with Prisma schema.
 
 Command: npx prisma migrate dev
 
-Every time we update the table or database, we run above command to refresh.
+This code creates a migration folder under prisma folder. Inside this folder we can see the SQL commands.
+
+Use DataGrip to connect, view and change table in the database.
 
 ### Create a Prisma client
+
+In prisma folder, create a client.ts file. To avoid creating multiple clients in develop mode, refer to [the best practice](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/nextjs-help#best-practices-for-using-prisma-client-in-development).
+
+### Get data
+
+Go to users/route.tsx file, change the static data to the data in database. Use findMany function to get all users.
+
+Go to users/[id]/route.tsx file, use findUnique to get user with given id.
