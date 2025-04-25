@@ -323,3 +323,11 @@ Command: npm install next-cloudinary. Then add my cloud name to .env file.
 Use unsigned upload [widget](https://next.cloudinary.dev/clduploadwidget/basic-usage#unsigned) to create an upload button.
 
 Create an upload folder and page.tsx.
+
+### Show uploaded image
+
+Add a state hook to store public_id from result. Define the result info as CloudinaryUploadWidgetInfo type so we can access the public_id field.
+
+### Customize the upload widget
+
+Refer to Cloudinary widget [website](https://demo.cloudinary.com/uw/), adjust UI and copy the js code.
