@@ -331,3 +331,11 @@ Add a state hook to store public_id from result. Define the result info as Cloud
 ### Customize the upload widget
 
 Refer to Cloudinary widget [website](https://demo.cloudinary.com/uw/), adjust UI and copy the js code.
+
+## Authentication
+
+### Set up NextAuth
+
+First install NextAuth.js using 'npm i next-auth'. Then, since we are using Next.js 13+, we refer to this page and create a app/api/auth/[...nextauth] folder and paste the code inside a route.ts file.
+
+Then, we add NEXTAUTH_URL and NEXTAUTH_SECRET in dot env file.
