@@ -345,3 +345,21 @@ Then, we add NEXTAUTH_URL and NEXTAUTH_SECRET in dot env file.
 Refer to this [page](https://next-auth.js.org/providers/google).
 
 Create a new Google Cloud project and configure the Branding, Audience, Clients and Data access.
+
+### Understand authentication session
+
+Go to Application-Cookies to view the session token under cookies. Cookies are small pieces of infomation that are exchanged between the client and server with each request.
+
+View the JSON web token:
+
+Create a token folder under auth and a route.ts file. Use getToken to get the token and go to /api/auth/token to view the token.
+
+name, email, picture: the log in user's account info
+
+sub: like the user ID
+
+iat, exp: issued at and expires at what time, by defaut the period is 30 days
+
+A JSON web token is like an identification card that the client sends to the server with each request.
+
+When the user logs in, NextAuth creates an authentication session for that user. By default, it represents that session using a JSON web token.
