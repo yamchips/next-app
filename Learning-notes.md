@@ -363,3 +363,5 @@ iat, exp: issued at and expires at what time, by defaut the period is 30 days
 A JSON web token is like an identification card that the client sends to the server with each request.
 
 When the user logs in, NextAuth creates an authentication session for that user. By default, it represents that session using a JSON web token.
+
+### Access session on the client
