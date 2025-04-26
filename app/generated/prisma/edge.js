@@ -145,6 +145,10 @@ const config = {
         "fromEnvVar": null,
         "value": "darwin-arm64",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "rhel-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -162,16 +166,17 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "mysql://root:090624JC@localhost:3306/nextapp"
+        "value": null
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../app/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id           Int      @id @default(autoincrement())\n  email        String   @unique\n  name         String\n  followers    Int      @default(0)\n  isActive     Boolean  @default(true)\n  registeredAt DateTime @default(now())\n}\n\nmodel Product {\n  id    Int    @id @default(autoincrement())\n  name  String @unique\n  price Float  @default(0)\n}\n",
-  "inlineSchemaHash": "ef7c3306e31fe1339ee7984c2fdbc60478172e9df75866f6970c0ac3d5402bbb",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../app/generated/prisma\"\n  binaryTargets = [\"native\", \"rhel-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"mysql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id           Int      @id @default(autoincrement())\n  email        String   @unique\n  name         String\n  followers    Int      @default(0)\n  isActive     Boolean  @default(true)\n  registeredAt DateTime @default(now())\n}\n\nmodel Product {\n  id    Int    @id @default(autoincrement())\n  name  String @unique\n  price Float  @default(0)\n}\n",
+  "inlineSchemaHash": "6673028a7500108d1eb221be26bdb1f6de921e6fd6a1585468c0bbc3d25347c6",
   "copyEngine": true
 }
 config.dirname = '/'
