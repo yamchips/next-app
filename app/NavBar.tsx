@@ -1,10 +1,7 @@
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
 const NavBar = () => {
-  const { status, data: session } = useSession();
-
   return (
     <div className="flex bg-slate-200 p-5">
       <Link href="/" className="mr-5">
@@ -13,10 +10,7 @@ const NavBar = () => {
       <Link href="/users" className="mr-5">
         Users
       </Link>
-      <Link href="/admin" className="mr-5">
-        Admin
-      </Link>
-      <Link href="/api/auth/signin">Sign In</Link>
+      <Link href="/admin">Admin</Link>
     </div>
   );
 };
