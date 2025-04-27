@@ -375,3 +375,7 @@ In NavBar, change it to client component and add useSession hook to get the stat
 Modify route.ts in api/auth/[..nextauth], export the provider as an object.
 
 In home page, use getServerSession function and get a session const. Access session properties using this variable.
+
+### Sign out users
+
+Add a link component with url '/api/auth/signout'. This route is automatically created by NextAuth so no manually configuration needed, just like sign in route.
