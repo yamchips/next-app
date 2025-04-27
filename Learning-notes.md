@@ -379,3 +379,9 @@ In home page, use getServerSession function and get a session const. Access sess
 ### Sign out users
 
 Add a link component with url '/api/auth/signout'. This route is automatically created by NextAuth so no manually configuration needed, just like sign in route.
+
+### Protect routes
+
+In real world, when a user wants to visit some private route, log in is required.
+
+Create a middleware.ts in the root folder, import middleware. Define config variable to include all private paths that require user log in.
