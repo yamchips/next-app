@@ -385,3 +385,17 @@ Add a link component with url '/api/auth/signout'. This route is automatically c
 In real world, when a user wants to visit some private route, log in is required.
 
 Create a middleware.ts in the root folder, import middleware. Define config variable to include all private paths that require user log in.
+
+### Database adapters
+
+In real app, we need to store our users in a database. These users can have related data like pictures, posts and so on. We need to use adapters, so NextAuth will automatically do this for us.
+
+Follow the instructions in video, not the website.
+
+Modify route.ts file in [..nextauth] folder, specify an adapter as part of initializing NextAuth.
+
+Remove previous User and Product model in schema.prisma and create other models from this [website](https://authjs.dev/getting-started/adapters/prisma#naming-conventions). We have User, Session, Account and VerificationToken model. Session is used for storing sessions in database, by default, the strategy we have is JWT(JSON web token).
+
+But now we cannot log in using google account. Because by default, the strategy is JWT, but when we use an adapter, NextAuth changes the strategy to database. Till now, we cannot use database sessions with social login or OAuth providers.
+
+So, go to [..nextauth] route.ts file, change session strategy to jwt then restart the server. Now we can see the user info in the database after we log in.
