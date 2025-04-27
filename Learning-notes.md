@@ -369,3 +369,9 @@ When the user logs in, NextAuth creates an authentication session for that user.
 Add a folder app/auth and a Provider.tsx file. The Provider returns a SessionProvider wrapping its children. It has to be a client component. Then in layout file, wrap all body using this Provider.
 
 In NavBar, change it to client component and add useSession hook to get the status and session data.
+
+### Access session on the server
+
+Modify route.ts in api/auth/[..nextauth], export the provider as an object.
+
+In home page, use getServerSession function and get a session const. Access session properties using this variable.
