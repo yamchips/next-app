@@ -363,3 +363,9 @@ iat, exp: issued at and expires at what time, by defaut the period is 30 days
 A JSON web token is like an identification card that the client sends to the server with each request.
 
 When the user logs in, NextAuth creates an authentication session for that user. By default, it represents that session using a JSON web token.
+
+### Access sessions on the client
+
+Add a folder app/auth and a Provider.tsx file. The Provider returns a SessionProvider wrapping its children. It has to be a client component. Then in layout file, wrap all body using this Provider.
+
+In NavBar, change it to client component and add useSession hook to get the status and session data.
