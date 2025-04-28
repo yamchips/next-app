@@ -399,3 +399,17 @@ Remove previous User and Product model in schema.prisma and create other models 
 But now we cannot log in using google account. Because by default, the strategy is JWT, but when we use an adapter, NextAuth changes the strategy to database. Till now, we cannot use database sessions with social login or OAuth providers.
 
 So, go to [..nextauth] route.ts file, change session strategy to jwt then restart the server. Now we can see the user info in the database after we log in.
+
+### Configure credentials provider
+
+Refer to this [page](https://next-auth.js.org/providers/credentials).
+
+Go to route.ts in [..nextauth], import CredentialsProvider and add a CredentialProvider in provider array. It has three parameters:
+
+1. a name string for display purpose, "Sign in with..."
+2. a credentials object that includes <input> tags and their attributes
+3. an authorize function that check the validity of input fields
+
+To check whether a user and password matches, a bcrypt library is used. Use 'npm i bcrypt' and 'npm i -D @types/bcrypt' to install.
+
+We need to add a password field to User modal and update the database with a new prisma migration.
