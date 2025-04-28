@@ -15,7 +15,7 @@ export async function GET(request: NextRequest, { params }: Props) {
   }
 
   const user = await prisma.user.findUnique({
-    where: { id: newId },
+    where: { id: newId.toString() },
   });
 
   if (!user) {
@@ -39,7 +39,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
   }
   // fetch and update the user
   const user = await prisma.user.findUnique({
-    where: { id: newId },
+    where: { id: newId.toString() },
   });
   if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
@@ -61,7 +61,7 @@ export async function DELETE(request: NextRequest, { params }: Props) {
     return NextResponse.json({ error: "Invalid endpoint" }, { status: 400 });
   }
   const user = await prisma.user.findUnique({
-    where: { id: newId },
+    where: { id: newId.toString() },
   });
   if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
