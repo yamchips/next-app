@@ -412,4 +412,15 @@ Go to route.ts in [..nextauth], import CredentialsProvider and add a CredentialP
 
 To check whether a user and password matches, a bcrypt library is used. Use 'npm i bcrypt' and 'npm i -D @types/bcrypt' to install.
 
-We need to add a password field to User modal and update the database with a new prisma migration.
+We need to add a password field to User model and update the database with a new prisma migration.
+
+### Register users
+
+Create a register folder under /api folder and a route.ts file containing a POST function. In this function, we do following things:
+
+1. Get the request body and validate it using zod
+2. Check whether there is a user with same email
+3. Use bcrypt to hash password
+4. Return the email as response
+
+If postman post request has internal server error, restart the service.
