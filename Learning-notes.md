@@ -24,6 +24,17 @@ The installation method in the video is outdated. Follow the instructions in [Ta
 
 New theme should be added in globals.css instead of tailwind.config.ts.
 
+### Comparison common frameworks
+
+So far, we have met Bootstrap, Chakra UI, Tailwind and DaisyUI. These libraries's features can be concluded in following table.
+
+| Name         | Type                                | Purpose                                                                            |
+| ------------ | ----------------------------------- | ---------------------------------------------------------------------------------- |
+| Bootstrap    | CSS framework                       | Prebuilt components (buttons, navbars, etc.) with a focus on traditional websites. |
+| Tailwind CSS | Utility-first CSS framework         | You build your own designs quickly using utility classes. No ready components.     |
+| DaisyUI      | Tailwind-based UI component library | Adds prebuilt components on top of Tailwind, like buttons, cards, modals.          |
+| Chakra UI    | React UI component library          | Prebuilt accessible React components with easy styling via props (no manual CSS).  |
+
 ## Routing and navigation
 
 ### Dynamic Routing
@@ -424,3 +435,13 @@ Create a register folder under /api folder and a route.ts file containing a POST
 4. Return the email as response
 
 If postman post request has internal server error, restart the service.
+
+Create a register folder in app and add a page.tsx. In this page, add a form that can submit user inputs.
+
+Here, fetch function contains an object besides the URL. The object has three fields: method, body and headers.
+
+GET: only URL
+
+DELETE: URL and method name
+
+POST, PUT/PATCH: URL and these three fields
