@@ -418,7 +418,7 @@ Refer to this [page](https://next-auth.js.org/providers/credentials).
 Go to route.ts in [..nextauth], import CredentialsProvider and add a CredentialProvider in provider array. It has three parameters:
 
 1. a name string for display purpose, "Sign in with..."
-2. a credentials object that includes <input> tags and their attributes
+2. a credentials object that includes `<input>` tags and their attributes
 3. an authorize function that check the validity of input fields
 
 To check whether a user and password matches, a bcrypt library is used. Use 'npm i bcrypt' and 'npm i -D @types/bcrypt' to install.
@@ -436,6 +436,8 @@ Create a register folder under /api folder and a route.ts file containing a POST
 
 If postman post request has internal server error, restart the service.
 
+#### Create register page
+
 Create a register folder in app and add a page.tsx. In this page, add a form that can submit user inputs.
 
 Here, fetch function contains an object besides the URL. The object has three fields: method, body and headers.
@@ -445,3 +447,20 @@ GET: only URL
 DELETE: URL and method name
 
 POST, PUT/PATCH: URL and these three fields
+
+#### Router
+
+Since we are using Next.js 13+, we need to import router from 'next/navigation'. Then we use `const router = useRouter()` to create a router instance.
+
+Common methods:
+
+1. router.push(url): navigates to a new route, client-side navigation
+2. router.replace(url): works like push() but replaces the current history entry, so pressing back won't work
+3. router.back(): goes back to previous page
+4. router.refresh(): refreshes current route, similar to full reload but preserves state when possible
+
+#### Client-side navigation and server-side navigation
+
+Client-side navigation is handled entirely in the browser, without reloading the whole page.
+
+Server-side navigation = Full page reload. The browser sends a full HTTP request to the server, which returns a brand-new HTML page.
