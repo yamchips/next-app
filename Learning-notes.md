@@ -474,3 +474,5 @@ Introduce a library called react email.
 In the video, we don't use default installation commands, instead we manually install it using: `npm i react-email @react-email/components`. After that, we go to package.json and add "preview-email": "email dev -p 3030" in scripts. Finally we create an emails folder in the root folder.
 
 ### Create an email template
+
+Create a WelcomeTemplate.tsx in /emails and add some basic content.
