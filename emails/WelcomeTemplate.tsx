@@ -17,7 +17,7 @@ const heading: CSSProperties = {
   fontSize: "32px",
 };
 
-const WelcomTemplate = ({ name }: { name: string }) => {
+const WelcomeTemplate = ({ name }: { name: string }) => {
   return (
     <Html>
       <Preview> Welcome aboard!</Preview>
@@ -33,4 +33,4 @@ const WelcomTemplate = ({ name }: { name: string }) => {
   );
 };
 
-export default WelcomTemplate;
+export default WelcomeTemplate;

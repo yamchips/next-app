@@ -469,7 +469,7 @@ Server-side navigation = Full page reload. The browser sends a full HTTP request
 
 ### Set up react email
 
-Introduce a library called react email.
+Introduce a library called react email. It is used to build and send emails using React and TypeScript.
 
 In the video, we don't use default installation commands, instead we manually install it using: `npm i react-email @react-email/components`. After that, we go to package.json and add "preview-email": "email dev -p 3030" in scripts. Finally we create an emails folder in the root folder.
 
@@ -489,3 +489,21 @@ We can use CSS properties or Tailwind.
 
 1. CSS properties: create CSSProperties object and use inline style
 2. Tailwind: import and wrap Body with Tailwind and apply className to target elements
+
+### Send emails
+
+React email integrates with different email service providers to send emails using React. Here we use Resend.
+
+Go to resend.com and create an account. Generate an API key. Add the key to .env file and install resend using npm.
+
+Finally we create an API endpoint for sending emails. This is just for demonstration. In real application, sending emails should be part of my business operations. For example, if someone submits an order, I need to send a confirmation email.
+
+Go to api folder, create a new folder called send-email and add a route.ts file. We create a POST function here. In the post method, we create a payload object and specify fields like from, to, subject and react.
+
+To send an email, we need a domain of our own. Then go to resend website to add our domain.
+
+#### Domain
+
+A domain name is the address to my website. If I own a website, it has an IP, like 23.545.23.567. I need to create a simple, easy to remember name like fanwu.com to allow public to visit it.
+
+DNS: domain name system
