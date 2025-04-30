@@ -464,3 +464,13 @@ Common methods:
 Client-side navigation is handled entirely in the browser, without reloading the whole page.
 
 Server-side navigation = Full page reload. The browser sends a full HTTP request to the server, which returns a brand-new HTML page.
+
+## Send emails
+
+### Set up react email
+
+Introduce a library called react email.
+
+In the video, we don't use default installation commands, instead we manually install it using: `npm i react-email @react-email/components`. After that, we go to package.json and add "preview-email": "email dev -p 3030" in scripts. Finally we create an emails folder in the root folder.
+
+### Create an email template
