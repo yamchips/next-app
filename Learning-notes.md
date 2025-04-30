@@ -476,3 +476,16 @@ In the video, we don't use default installation commands, instead we manually in
 ### Create an email template
 
 Create a WelcomeTemplate.tsx in /emails and add some basic content.
+
+### Preview email
+
+Add a .react-email/ in .gitignore file, which means ignore a folder at root folder called react-email.
+
+Then we run `npm run preview-email` and then we can open the portal set in package.json and send an email to ourself.
+
+### Style email
+
+We can use CSS properties or Tailwind.
+
+1. CSS properties: create CSSProperties object and use inline style
+2. Tailwind: import and wrap Body with Tailwind and apply className to target elements
