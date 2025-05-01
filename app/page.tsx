@@ -14,7 +14,8 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
     <main>
-      <h1>Hello {session && session.user!.name}</h1>
+      <h1 className="font-[roboto]">Hello {session && session.user!.name}</h1>
+      <h1 className="font-[geist]">Hello</h1>
       <Link href="/users">Users</Link>
       <ProductCard />
       <div className="relative w-64 h-64 border-2 border-solid">

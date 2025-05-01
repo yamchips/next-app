@@ -1,12 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import NavBar from "./NavBar";
 import AuthProvider from "./auth/Provider";
-import Script from "next/script";
 import GoogleAnalyticsScript from "./GoogleAnalyticsScript";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-roboto",
+});
+
+const geist = localFont({
+  src: "../public/fonts/geist-latin.woff2",
+  variable: "--font-geist",
+});
 
 export const metadata: Metadata = {
   title: "Next App",
@@ -21,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="cyberpunk">
       <GoogleAnalyticsScript />
-      <body className={inter.className}>
+      <body className={`${roboto.variable} ${geist.variable}`}>
         <AuthProvider>
           <NavBar />
         </AuthProvider>

@@ -539,3 +539,20 @@ To clean up the code, add a GoogleAnalyticsScript.tsx on the root folder and imp
 E.g., your <button onClick={...}> doesn’t work right after HTML is loaded.
 
 After hydration, the onClick gets activated and works as expected.
+
+### Use fonts
+
+1. Use online fonts
+   Add Roboto in import { Inter, Roboto } from "next/font/google" to import Roboto font, and create a variable called roboto. Use roboto.className in body element to set all font to Roboto.
+
+2. Use local fonts
+   Add a public/fonts folder and put our own fonts inside, create another variable called geist and use geist.className to set all body elements' font.
+
+3. Use custom fonts
+   In localFont function, we add a field called variable and set the customed name of this font, such as '--font-roboto'.
+
+   In the html attribute, we can use `className={`${roboto.variable} ${geist.variable}`}` to allow these two variables to be used inside body. In page.tsx, we can set body's children element font size. Here, we need to refer to the latest [instruction](https://tailwindcss.com/docs/font-family#using-a-custom-value).
+
+   We also need go to tailwind.config.ts to register our custom fonts.
+
+   We can go to global.css to set default font for any html element.
