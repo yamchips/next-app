@@ -507,3 +507,9 @@ To send an email, we need a domain of our own. Then go to resend website to add 
 A domain name is the address to my website. If I own a website, it has an IP, like 23.545.23.567. I need to create a simple, easy to remember name like fanwu.com to allow public to visit it.
 
 DNS: domain name system
+
+## Optimize
+
+### Optimize images
+
+Create a public/images folder and put images like logo, icon here.
