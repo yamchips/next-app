@@ -513,3 +513,29 @@ DNS: domain name system
 ### Optimize images
 
 Create a public/images folder and put images like logo, icon here.
+
+### Use third-party scripts
+
+Use Script element from next/script. It has a strategy property which can be assigned to one of the four choices:
+
+1. beforeInteractive: the script is loaded before Next.js injects any client side code to our pages, which is called hydration. Use this strategy only for scripts that are critical and should be loaded early on, such as bot detectors or cookie consent managers.
+
+2. afterInteractive: default value. After hydration. Examples are tag managers and analytics.
+
+3. lazyOnload: the scripts are loaded after all resources on the page have been fetched. For background or low priority scripts, such as chat plugins, social media widgets.
+
+To clean up the code, add a GoogleAnalyticsScript.tsx on the root folder and import it in layout.
+
+#### Hydration
+
+1. Next.js on the server side renders your page into plain HTML. This is fast and great for SEO because the user and search engines get content immediately.
+
+2. The browser receives this HTML and shows it quickly (called the first paint).
+
+3. Then, Next.js sends JavaScript to the browser — the React code for your components.
+
+4. **Hydration** happens: React uses this JavaScript to attach interactivity (event handlers, dynamic state, etc.) to the static HTML.
+
+E.g., your <button onClick={...}> doesn’t work right after HTML is loaded.
+
+After hydration, the onClick gets activated and works as expected.
