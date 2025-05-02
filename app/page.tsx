@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ProductCard from "./components/ProductCard/ProductCard";
 import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+import { authOptions } from "./api/auth/authOptions";
 import cat from "@/public/images/cat.jpg";
 import Image from "next/image";
 import HeavyComponent from "./components/HeavyComponent";

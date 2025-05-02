@@ -596,3 +596,12 @@ Create another button and add a onclick function. This function sorts an array u
 We can import this library in the click function so it will be downloaded only when click event happens.
 
 We can go to page.js to search for 'orderBy' and see how many results we find. In lazy loading, we can only find one instance, but after clicking the button, in the new request, we can find 11 results.
+
+## Deployment
+
+### Preparation
+
+Build locally first.
+
+1. Add an id attribute to the second script in GoogleAnalyticsScript. It is an inline script so Next.js needs an id, the first script is an external script, it's unique by nature of the URL so it doesn't need an id.
+2. "authOptions" is not a valid Route export field. In route.ts file, we can only export HTTP method handlers like GET, POST and so on. So, we create another file and separate most code.
