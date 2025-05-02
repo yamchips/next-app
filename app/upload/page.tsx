@@ -10,7 +10,7 @@ const UploadPage = () => {
   const [publicId, setPublicId] = useState("");
   return (
     <>
-      {publicId && (
+      {/* {publicId && (
         <CldImage
           src={publicId}
           alt={"uploaded image"}
@@ -63,7 +63,8 @@ const UploadPage = () => {
             Upload
           </button>
         )}
-      </CldUploadWidget>
+      </CldUploadWidget> */}
+      <button className="btn btn-primary">Upload</button>
     </>
   );
 };
