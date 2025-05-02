@@ -536,7 +536,7 @@ To clean up the code, add a GoogleAnalyticsScript.tsx on the root folder and imp
 
 4. **Hydration** happens: React uses this JavaScript to attach interactivity (event handlers, dynamic state, etc.) to the static HTML.
 
-E.g., your <button onClick={...}> doesn’t work right after HTML is loaded.
+E.g., your `<button onClick={...}> `doesn’t work right after HTML is loaded.
 
 After hydration, the onClick gets activated and works as expected.
 
@@ -551,8 +551,24 @@ After hydration, the onClick gets activated and works as expected.
 3. Use custom fonts
    In localFont function, we add a field called variable and set the customed name of this font, such as '--font-roboto'.
 
-   In the html attribute, we can use `className={`${roboto.variable} ${geist.variable}`}` to allow these two variables to be used inside body. In page.tsx, we can set body's children element font size. Here, we need to refer to the latest [instruction](https://tailwindcss.com/docs/font-family#using-a-custom-value).
+   In the html attribute, we can use `className={${roboto.variable} ${geist.variable}}` to allow these two variables to be used inside body. In page.tsx, we can set body's children element font size. Here, we need to refer to the latest [instruction](https://tailwindcss.com/docs/font-family#using-a-custom-value).
 
    We also need go to tailwind.config.ts to register our custom fonts.
 
    We can go to global.css to set default font for any html element.
+
+### Search engine optimization
+
+Metadata object in each page.tsx or layout.tsx is added to the head of the html by Next.js.
+
+In some pages, like pages have route or query string parameters, we need to generate metadata dynamically.
+
+```
+export async function generateMetadata():Promise<Metadata> {
+   const product = await fetch('www.url.com/products/1')
+   return {
+      title: product.title
+      description: product.description
+   }
+}
+```
