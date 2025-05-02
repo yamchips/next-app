@@ -605,3 +605,7 @@ Build locally first.
 
 1. Add an id attribute to the second script in GoogleAnalyticsScript. It is an inline script so Next.js needs an id, the first script is an external script, it's unique by nature of the URL so it doesn't need an id.
 2. "authOptions" is not a valid Route export field. In route.ts file, we can only export HTTP method handlers like GET, POST and so on. So, we create another file and separate most code.
+
+### Deploy to Vercel
+
+In dot env file we have a couple of environment variables, we need to configure them on vercel. For database, we use a local database in development and need a cloud database in production. Other environment variables in production should be different from those used in development due to security reasons.
