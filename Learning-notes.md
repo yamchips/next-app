@@ -543,7 +543,7 @@ After hydration, the onClick gets activated and works as expected.
 ### Use fonts
 
 1. Use online fonts
-   Add Roboto in import { Inter, Roboto } from "next/font/google" to import Roboto font, and create a variable called roboto. Use roboto.className in body element to set all font to Roboto.
+   Add Roboto in `import { Inter, Roboto } from "next/font/google"` to import Roboto font, and create a variable called roboto. Use roboto.className in body element to set all font to Roboto.
 
 2. Use local fonts
    Add a public/fonts folder and put our own fonts inside, create another variable called geist and use geist.className to set all body elements' font.
@@ -572,3 +572,27 @@ export async function generateMetadata():Promise<Metadata> {
    }
 }
 ```
+
+### Lazy loading
+
+#### Client components
+
+To demonstrate lazy loading, we create following client side components:
+
+1. LazyLoadingContainer: contains a button and a heavy component
+2. Button: a button handles onclick event
+3. HeavyComponent: an example heavy component
+
+Instead of importing statically `import HeavyComponent from "./HeavyComponent"`, we use dynamic in Next.js to dynamic import it. So, in origin page.js, we cannot find HeavyComponent, after clicking button, we can see a separate request is sent to the server to fetch this component.
+
+We can add a loading indicator when the heavy component is downloading. We can set ssr to false to disable it.
+
+#### External javascript libraries
+
+Use a library called lodash. Here we use two commands to install it because it's written in javascript. The second command is for TypeScript to know lodash functions at compile time.
+
+Create another button and add a onclick function. This function sorts an array using lodash. If we import lodash statically, we are including this library in our page bundle, so the browser has to download it to render this page.
+
+We can import this library in the click function so it will be downloaded only when click event happens.
+
+We can go to page.js to search for 'orderBy' and see how many results we find. In lazy loading, we can only find one instance, but after clicking the button, in the new request, we can find 11 results.

@@ -4,6 +4,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import cat from "@/public/images/cat.jpg";
 import Image from "next/image";
+import HeavyComponent from "./components/HeavyComponent";
+import LazyLoadingContainer from "./components/LazyLoadingContainer";
 
 function wait(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -32,6 +34,7 @@ export default async function Home() {
           priority // image uses lazy loading, adding this attribute allows the image to be loaded when we retrieve the page
         />
       </div>
+      <LazyLoadingContainer />
     </main>
   );
 }
